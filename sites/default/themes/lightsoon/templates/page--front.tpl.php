@@ -66,7 +66,21 @@
 			</div><!--End overlay-->
 		</div><!--End teaser-->	
 		
-
+		<!--Footer-->
+		<footer id="footer">
+			<p>&copy; 2013. Patrick Segarel All Rights Reserved.</p>
+			<!--Socials footer-->
+			<ul class="socialsFooter">
+				<li><a class="socialFacebook" href="https://www.facebook.com/patrick.segarel"><i class="icon-facebook"></i></a></li>
+				<!-- <li><a class="socialVimeo" href="#"><i class="icon-vimeo"></i></a></li> -->
+				<li><a class="socialPinterest" href="http://www.pinterest.com/psegarel/"><i class="icon-pinterest"></i></a></li>
+				<li><a class="socialLinkedin" 
+					href="http://www.linkedin.com/profile/view?id=317394297&trk=nav_responsive_tab_profile_pic"><i class="icon-linkedin"></i></a></li>
+				<li><a class="socialGplus" href="https://plus.google.com/u/0/109806195232814989753/posts"><i class="icon-gplus"></i></a></li>
+				<!-- <li><a class="socialTwitter" href="#"><i class="icon-twitter-1"></i></a></li> -->
+				<!-- <li><a class="socialDribbble" href="http://dribbble.com/psegarel"><i class="icon-dribbble"></i></a></li> -->
+			</ul><!--End socials footer-->
+		</footer><!--End footer-->	
 		
 	</div><!--/ Wrapper-->	
 </div>
