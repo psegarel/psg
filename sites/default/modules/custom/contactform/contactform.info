@@ -1,0 +1,8 @@
+name = Contact Form
+description = "A simple custom contact form"
+package = Development
+core = 7.x
+
+dependencies[] = contact
+
+files[] = inc/contact-site-form.tpl.php

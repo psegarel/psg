@@ -1,0 +1,10 @@
+name = Base Project
+description = "Basic project setup"
+package = Development
+core = 7.x
+
+
+dependencies[] = admin_menu
+;dependencies[] = fontyourface
+dependencies[] = libraries
+dependencies[] = module_filter

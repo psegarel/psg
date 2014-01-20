@@ -1,0 +1,53 @@
+header {
+  z-index: 100;
+  padding-top: 20px;
+}
+
+.teaserTitle h1,
+#testimonials blockquote,
+.testimoniaContainer h3,
+ul.pagination li a,
+ul.pagination li.current a {
+  color: #FFFFFF;
+}
+
+ul.pagination li.current a {
+  border-color: #ffffff;
+}
+
+.teaserTitle h1:before {
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.messages,
+#edit-copy	{ 	font-family: 'robotobold';
+				font-size: 13px;
+			}
+div.status, table tr.ok { background-color: #eee;
+						  border:none;
+						}
+
+div.status, .ok { color: #444;
+					border:none;
+			   }		
+			   	
+.contactForm input#edit-submit {
+    background:  #f67d42;
+    border:none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+	height:52px;
+    text-transform: uppercase;
+    width: 460px;
+	font-family: 'robotobold';
+	font-size:14px;
+	border-radius:4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+.contactForm input#edit-submit:hover {
+    background: #2d2d2d;
+}
