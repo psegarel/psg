@@ -104,7 +104,7 @@
 								<div class="grid-2 transition">&nbsp;</div>
 								<div class="grid-2 transition"> <!-- Add "lanch form" class to transform into button -->
 									<i class="fa fa-envelope-o fa-2x"></i> 
-									<br><br>patrick.segarel@gmail.com
+									<br><br>info@patrick-segarel.com
 								</div>
 							</div>			
 						</div>
