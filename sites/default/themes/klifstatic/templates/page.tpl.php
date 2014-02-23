@@ -1,236 +1,156 @@
-<?php $filepath = drupal_get_path('theme' , 'klifstatic');?>
+<?php
 
-<!--================= Wrapper start ================-->
-<div id="wrapper">
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.tpl.php template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - $base_path: The base URL path of the Drupal installation. At the very
+ *   least, this will always default to /.
+ * - $directory: The directory the template is located in, e.g. modules/system
+ *   or themes/bartik.
+ * - $is_front: TRUE if the current page is the front page.
+ * - $logged_in: TRUE if the user is registered and signed in.
+ * - $is_admin: TRUE if the user has permission to access administration pages.
+ *
+ * Site identity:
+ * - $front_page: The URL of the front page. Use this instead of $base_path,
+ *   when linking to the front page. This includes the language domain or
+ *   prefix.
+ * - $logo: The path to the logo image, as defined in theme configuration.
+ * - $site_name: The name of the site, empty when display has been disabled
+ *   in theme settings.
+ * - $site_slogan: The slogan of the site, empty when display has been disabled
+ *   in theme settings.
+ *
+ * Navigation:
+ * - $main_menu (array): An array containing the Main menu links for the
+ *   site, if they have been configured.
+ * - $secondary_menu (array): An array containing the Secondary menu links for
+ *   the site, if they have been configured.
+ * - $breadcrumb: The breadcrumb trail for the current page.
+ *
+ * Page content (in order of occurrence in the default page.tpl.php):
+ * - $title_prefix (array): An array containing additional output populated by
+ *   modules, intended to be displayed in front of the main title tag that
+ *   appears in the template.
+ * - $title: The page title, for use in the actual HTML content.
+ * - $title_suffix (array): An array containing additional output populated by
+ *   modules, intended to be displayed after the main title tag that appears in
+ *   the template.
+ * - $messages: HTML for status and error messages. Should be displayed
+ *   prominently.
+ * - $tabs (array): Tabs linking to any sub-pages beneath the current page
+ *   (e.g., the view and edit tabs when displaying a node).
+ * - $action_links (array): Actions local to the page, such as 'Add menu' on the
+ *   menu administration interface.
+ * - $feed_icons: A string of all feed icons for the current page.
+ * - $node: The node object, if there is an automatically-loaded node
+ *   associated with the page, and the node ID is the second argument
+ *   in the page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - $page['help']: Dynamic help text, mostly for admin pages.
+ * - $page['highlighted']: Items for the highlighted content region.
+ * - $page['content']: The main content of the current page.
+ * - $page['sidebar_first']: Items for the first sidebar.
+ * - $page['sidebar_second']: Items for the second sidebar.
+ * - $page['header']: Items for the header region.
+ * - $page['footer']: Items for the footer region.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_page()
+ * @see template_process()
+ * @see html.tpl.php
+ *
+ * @ingroup themeable
+ */
+?>
 
-	<div class="container-bg">
-		<div class="container-overlay"></div>
-		<span class="over-border top-border"></span>
-		<span class="over-border bottom-border"></span>
-		<span class="over-border left-border"></span>
-		<span class="over-border right-border"></span>
-	</div>
-	
-<!--================= Background ================-->
+  <div id="page-wrapper"><div id="page">
 
-<div class="bg" style="background: #000;"></div>
-	
-<!--================= Main start ================-->
+    <div id="header"><div class="section clearfix">
 
-	<div class="main">
+      <?php if ($logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
+      <?php endif; ?>
 
-		<div class="swiper-container">
-		
-			<div class="swiper-wrapper">
-			
+      <?php if ($site_name || $site_slogan): ?>
+        <div id="name-and-slogan">
+          <?php if ($site_name): ?>
+            <?php if ($title): ?>
+              <div id="site-name"><strong>
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              </strong></div>
+            <?php else: /* Use h1 when the content title is empty */ ?>
+              <h1 id="site-name">
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              </h1>
+            <?php endif; ?>
+          <?php endif; ?>
 
-				<div class="swiper-slide">
-				
-			 <!--================= About start ================-->
-			 
-					<div class="container">
-										
-						<div class="content"> 
-	
-							<h2>About us</h2>    
-							<div class="small-separator"></div>                       	
-			
-							<p class="align-just"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo eros justo, in pulvinar neque congue eu. Fusce gravida pharetra leo, in consequat sapien bibendum eleifend. Duis suscipit purus at mollis varius. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p> 
-							<p class="align-just">Ut eu nisl ut purus sodales suscipit sit amet non elit. Pellentesque viverra fringilla purus ut pretium. Morbi sit amet nunc sed nibh lobortis posuere condimentum nec urna. Praesent tincidunt dictum porttitor. Cras et purus sed ipsum ullamcorper tristique.</p>
-								
-							<!--social-links -->
-								
-							<div class="social-links">
-								<ul>
-									<li><a href="#" target="_blank"  class="transition"><i class="fa fa-facebook-square"></i><span>Facebook</span></a></li>
-									<li><a href="#" target="_blank" class="transition"><i class="fa fa-dribbble"></i><span>Dribbble</span></a></li>
-									<li><a href="#" target="_blank" class="transition"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
-								</ul>
-							</div>
-			
-						</div><!--About end-->
-						<a class="navigation arrow-right back-left transition" href="#"><i class="fa fa-chevron-right"></i></a>  
-					</div>
-					
-				</div>
-				
+          <?php if ($site_slogan): ?>
+            <div id="site-slogan"><?php print $site_slogan; ?></div>
+          <?php endif; ?>
+        </div> <!-- /#name-and-slogan -->
+      <?php endif; ?>
 
+      <?php print render($page['header']); ?>
 
-				<div class="swiper-slide"> 
-				
-				<!--============= Countdown start =============-->	
-				      	          
-					<div class="container">
-						
-						<div class="content fistslide transition bc"> 
-						
-						<div class="fade transition">  
-						<span class="rotade rot-top-left"></span>
-						<span class="rotade rot-top-right"></span>
-						<span class="rotade rot-bottom-left"></span>
-						<span class="rotade rot-bottom-right"></span>  
-						<h2>Patrick Segarel</h2>
-							<!-- <img src=<?php // print $filepath."/img/logo.png" ?>  alt="">  -->
-							 
-								<!-- <ul class="countdown">
-									<li>
-										<span class="days rot">00</span>
-										<p class="days_ref">days</p>			
-									</li>
-									<li>
-										<span class="hours rot">00</span>
-										<p class="hours_ref">hours</p>
-									</li>
-									<li>
-										<span class="minutes rot2">00</span>
-										<p class="minutes_ref">minutes</p>
-							
-									</li>
-									<li>
-										<span class="seconds rot2">00</span>
-										<p class="seconds_ref">seconds</p>
-									</li>
-								</ul> -->
-									
-			
-							<h3>Web Development &amp; Design</h3>
- 
-						</div> 
-						             
-						<div class="clear"></div>
-							
-						<div class="show-progress isDown transition">
-							<i class="fa fa-chevron-down fa-2x"></i>
-						</div>
-							
-						</div> 
-						              
-						<a class="navigation arrow-left about-link transition" href="#"><i class="fa fa-info fa-1x"></i></a> 
-						<a class="navigation arrow-right contact-link transition" href="#"><i class="fa fa-envelope-o fa-1x"></i></a> 
+    </div></div> <!-- /.section, /#header -->
 
-						<div class="progress-holder">
-						
-							<div class="progress">
-							 
-							<input data-bgcolor="#ccc"  data-readonly=true type="text" data-width="250" data-skin="tron" data-fgcolor="#fff" data-thickness=".07" data-angleoffset="180" class="num num2" name="65" value="0">
-							<span class="percent">%</span>
-							
-							</div>
-							
-							<h3>NOTIFY ME WHEN IT'S READY</h3> 
-							
-							<div class="subcribe">
+    <?php if ($main_menu || $secondary_menu): ?>
+      <div id="navigation"><div class="section">
+        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
+        <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
+      </div></div> <!-- /.section, /#navigation -->
+    <?php endif; ?>
 
-								<span class="overlay suboverlay"></span>
-								<fieldset>
-									<form class="subscriptionForm" method="post">
-										<input id="subscriptionForm" class="inputForm" type="text" value="Enter Your Email Address" onFocus="if (this.value=='Enter Your Email Address') this.value=''" onBlur="if (this.value==''){this.value='Enter Your Email Address'}" />
-										<input type="submit" id="submitButton" class="transition" value="Send">
-									</form>
-									
-									<div id="success">Thanks for your subscription</div>
-									<div id="error">Please enter a valid email address</div>
-									
-								</fieldset>
-								
-							</div>
-							 
-						</div> 
-						
-					</div> <!-- Countdown end --> 
-					   
-				</div>
-				
+    <?php if ($breadcrumb): ?>
+      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+    <?php endif; ?>
 
-				<div class="swiper-slide">
-				
-				<!--============== Contact start ================-->
-							
-					<div class="container">
+    <?php print $messages; ?>
 
-						<div class="content fade2 transition">
-						
-							<h2>Get in touch</h2> 
-							<div class="small-separator"></div>
-					
-							
-							<p class="align-just" style="text-align:center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo eros justo, in pulvinar neque congue eu. Fusce gravida pharetra leo, in consequat sapien bibendum eleifend. </p> 
-							
-							<div class="contact-info">
-							
-								<div class="grid-2 transition">
-									<i class="fa fa-mobile fa-2x"></i>
-									<br><br> +1 (000) 123456 
-								</div>	
-								
-								<div class="grid-2 transition lanch-form">
-									<i class="fa fa-envelope-o fa-2x"></i> 
-									<br><br>yourmail@yuormail.com
-								</div>
-								
-								<div class="grid-2 transition">
-									<i class="fa fa-globe fa-2x"></i>
-									<br><br><a href="#" target="_blank">Heritage Park Minneapolis</a> 
-								</div>
-							</div>			
-						</div>
-						
-						<!--contact form -->
-						
-						<div class="contact-form clear">
-							<div class="close-form transition"><i class="fa fa-times"></i></div>
-							<fieldset id="contact_form">
-																		
-										
-								<div class="grid-half">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-										
-								<div class="grid-half">
-									<label for="email">Email</label>
-									<input type="text" name="email" id="email"  class="right" />
-								</div>
-										
-								<label for="message" class="m-top">Message</label>
-								<textarea name="message"  id="message" ></textarea>
-										
-								<div class="clear"></div>
-																	
-								<label>
-									<button class="submit_btn transition" id="submit_btn"><i class="fa fa-envelope-o fa-2x"></i> </button>
-								</label>
-								<div id="result"></div>
-								
-							</fieldset>
-								
-						</div>
-						
-						<a class="navigation arrow-left back-right transition" href="#"><i class="fa fa-chevron-left"></i></a> 
-						
-					</div><!--Contact end -->  
-					      
-				</div>
-				
+    <div id="main-wrapper"><div id="main" class="clearfix">
 
-			</div> 
-			
-		</div>
-		
-	</div><!-- Main end -->
-	
-</div><!-- Wrapper end -->
+      <div id="content" class="column"><div class="section">
+        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+        <a id="main-content"></a>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+        <?php print render($title_suffix); ?>
+        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+        <?php print render($page['content']); ?>
+        <?php print $feed_icons; ?>
+      </div></div> <!-- /.section, /#content -->
 
-<!--=============== javascript ===============-->
+      <?php if ($page['sidebar_first']): ?>
+        <div id="sidebar-first" class="column sidebar"><div class="section">
+          <?php print render($page['sidebar_first']); ?>
+        </div></div> <!-- /.section, /#sidebar-first -->
+      <?php endif; ?>
 
-	<script type="text/javascript" src=<?php print $filepath."/js/jquery.min.js" ;?>></script>
-	<script type="text/javascript" src=<?php print $filepath."/js/jpreloader.min.js" ;?>></script>
-	<script type="text/javascript" src=<?php print $filepath."/js/easing.js" ;?>></script>
-	<script type="text/javascript" src=<?php print $filepath."/js/idangerous.swiper-2.0.min.js" ;?>></script>
-	<script type="text/javascript" src=<?php // print $filepath."/js/superslides.js" ;?>></script>
-	<script type="text/javascript" src=<?php print $filepath."/js/county.js" ;?>></script>
-	<script type="text/javascript" src=<?php print $filepath."/js/jquery.knob.js" ;?>></script>
-	<script type="text/javascript" src=<?php print $filepath."/js/init.js" ;?>></script>
-	
-</body>
-</html>
+      <?php if ($page['sidebar_second']): ?>
+        <div id="sidebar-second" class="column sidebar"><div class="section">
+          <?php print render($page['sidebar_second']); ?>
+        </div></div> <!-- /.section, /#sidebar-second -->
+      <?php endif; ?>
+
+    </div></div> <!-- /#main, /#main-wrapper -->
+
+    <div id="footer"><div class="section">
+      <?php print render($page['footer']); ?>
+    </div></div> <!-- /.section, /#footer -->
+
+  </div></div> <!-- /#page, /#page-wrapper -->
