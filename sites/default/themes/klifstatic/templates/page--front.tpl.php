@@ -13,7 +13,7 @@
 	
 <!--================= Background ================-->
 
-<div class="bg" style="background-image:url(<?php print $filepath; ?>/img/bg.jpg)"></div>
+<div class="bg" style="background-image:url(<?php print $filepath; ?>/img/calm.jpg)"></div>
 	
 <!--================= Main start ================-->
 
