@@ -34,7 +34,7 @@
 							<div class="small-separator"></div>                       	
 			
 							<p class="align-just" style="text-align:center"> My name is Patrick Segarel, I am a web developer currently based in South China. I love solving problems with code & design, as well as bringing beautiful ideas to life..</p> 
-							<p class="align-just" style="text-align:center">With each project, my main objective is to create user-friendly and performant websites.</p>
+							<p class="align-just" style="text-align:center">With each project, one of my primary objectives is to create user-friendly and performant websites.</p>
 							
 							<!--social-links -->
 								
