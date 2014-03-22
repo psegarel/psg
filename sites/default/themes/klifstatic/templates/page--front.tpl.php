@@ -1,5 +1,3 @@
-<?php $filepath = drupal_get_path('theme' , 'klifstatic');?>
-<?php print $messages; ?>
 <!--================= Wrapper start ================-->
 <div id="wrapper">
 
@@ -12,9 +10,9 @@
 	</div>
 	
 <!--================= Background ================-->
-
-<div class="bg" style="background-image:url(<?php print $filepath; ?>/img/calm.jpg)"></div>
-	
+<?php if(!empty($background_image)): ?>
+	<div class="bg" style="background-image:url(<?php print $background_image; ?>)"></div>
+<?php endif; ?>	
 <!--================= Main start ================-->
 
 	<div class="main">
@@ -30,11 +28,7 @@
 					<div class="container">
 						<div class="content"> 
 	
-							<h2>About me</h2>    
-							<div class="small-separator"></div>                       	
-			
-							<p class="align-just" style="text-align:center"> My name is Patrick Segarel, I am a web developer currently based in South China. I love solving problems with code & design, as well as bringing beautiful ideas to life..</p> 
-							<p class="align-just" style="text-align:center">With each project, one of my primary objectives is to create user-friendly and performant websites.</p>
+							<?php if(!empty($about_me)) print $about_me;?>
 							
 							<!--social-links -->
 								
@@ -68,7 +62,7 @@
 								<!-- <img src=<?php // print $filepath."/img/logo.png" ?>  alt="">  -->
 								<h3><?php print $site_slogan; ?></h3>
 							</div> 
-
+							<?php print $messages; ?>
 							<div class="clear"></div>
 						</div> 
 

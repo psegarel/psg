@@ -3,14 +3,66 @@
 function baseproject_preprocess_page(&$variables)
 {
 	if($variables['is_front']){
-		$contact = drupal_get_form('contact_site_form');
-		if(!empty($contact)){
-			$variables['contact'] = $contact;
-		}
+		
+		// Image Path
+		$filepath = drupal_get_path('theme' , 'klifstatic');
+		//$bgimage_path = ;
+		$variables['filepath'] = $filepath;
+		$variables['background_image'] = $filepath.'/img/calm.jpg';	
+		
+		// About me
+		$about_me = _baseproject_about_page();	
+		$variables['about_me'] = drupal_render($about_me);	
 	}
 }
 
 function baseproject_form_alter(&$form, &$form_state, $form_id)
 {
+}
+
+function _baseproject_about_page()
+{
+	$result = _baseproject_query();
+	if(!empty($result))
+	{
+		$nid = reset($result);
+		$node = node_load($nid);
+
+	
+		$about = array(
+			'title'	=> array(
+				'#prefix'	=> '<h2>',
+				'#suffix'	=> '</h2>',
+				'#markup'	=> $node->title,
+			),
+			'separator' => array(
+				'#markup' => '<div class="small-separator"></div>',
+			),
+			'body'	=> array(
+				'#markup'	=> $node->body[LANGUAGE_NONE][0]['safe_value'],
+			),
+		);
+		
+		return $about;
+		
+	}else{
+		return FALSE;
+	}
+}
+
+function _baseproject_query()
+{
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node')
+	  ->entityCondition('bundle', 'page')
+	  ->propertyCondition('status', 1)
+	  ->propertyCondition('title', 'About me')
+	  ->range(0, 1)
+	  ->addMetaData('account', user_load(1)); // Run the query as user 1.
+	$result = $query->execute();
+	
+	if (isset($result['node'])) {
+	  return array_keys($result['node']);
+	}
 }
 
