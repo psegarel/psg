@@ -1,0 +1,32 @@
+@import "fonts";
+@import "variables";
+
+html, body {
+	background: $bodybgcolor;
+	color: $bodycolor;
+}
+.navbar-default {
+	background: $bodybgcolor;
+	border-color:$bodycolor;
+}
+.navbar {
+	padding: 20px 0;
+
+	h2 {
+		font-size: 18px;
+		font-family: 'Dosis' , sans-serif;
+		text-align: center;
+		font-weight: 100;
+	}	
+}
+.home-text {
+	margin-top: 14%;
+
+	h1 {
+		font-family: 'Dosis' , sans-serif;
+		text-align: center;
+		font-weight: 100;
+		letter-spacing: 31px;
+		text-transform: uppercase;
+	}
+}
