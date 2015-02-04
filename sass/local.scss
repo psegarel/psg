@@ -4,29 +4,52 @@
 html, body {
 	background: $bodybgcolor;
 	color: $bodycolor;
+	font-family: 'Dosis' , sans-serif;
 }
+
 .navbar-default {
 	background: $bodybgcolor;
-	border-color:$bodycolor;
+	border-color: $bodybgcolor;
+	margin: 5px 0 20px 0;
 }
-.navbar {
-	padding: 20px 0;
 
-	h2 {
-		font-size: 18px;
-		font-family: 'Dosis' , sans-serif;
-		text-align: center;
-		font-weight: 100;
-	}	
+a {
+	color: $bodycolor;
+	&:hover {
+		color: #eee;
+	}
 }
+
+ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+
+	li {
+		display: inline-block;
+		float: left;
+		margin-right: 20px;
+	}
+}
+
+ul.social {
+	margin-top: 20px;
+}
+
 .home-text {
 	margin-top: 14%;
+	text-align: center;
 
 	h1 {
-		font-family: 'Dosis' , sans-serif;
-		text-align: center;
+		font-size: 28px;
 		font-weight: 100;
 		letter-spacing: 31px;
 		text-transform: uppercase;
+		margin-bottom: 60px;
+	}
+
+	h2 {
+		font-size: 20px;
+		font-weight: 100;
 	}
 }
